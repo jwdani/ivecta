@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.att.training</groupId>
+  <artifactId>Training_Spring_1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
+  <!-- All SpringBoot application must have a parent -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.6.7</version>
+    <relativePath></relativePath>
+  </parent>
+
+  <name>Training_Spring_1</name>
+  <url>http://maven.apache.org</url>
+  
+  <!-- Always include the SpringBoot Maven plugin and Maven Compiler plugin -->
+  <build>    
+   <plugins>           
+          <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+          </plugin>
+          <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                       <source>${java.version}</source>
+                       <target>${java.version}</target>
+                </configuration>
+      </plugin>        
+   </plugins>   
+  </build>
+
+  <dependencies>
+  	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${h2.version}</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>${commons-lang3.version}</version>
+	</dependency>
+  </dependencies>
+  
+  <!-- Put the properties at the bottom with all versions for artifacts -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>11</java.version>
+    <commons-lang3.version>3.12.0</commons-lang3.version>
+    <h2.version>2.1.214</h2.version>
+  </properties>
+  
+</project>
